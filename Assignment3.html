@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello!</title>
+        <style>
+            h3 span{
+                color:antiquewhite;
+                background-color:rgb(65, 21, 21);
+                /* border-radius: 5px; */
+                } 
+            #submit{
+                    color:antiquewhite;
+                    background-color:rgb(65, 21, 21);
+                    margin-top:10px;
+            }
+            #same th, #show td{
+                    margin-top:10px;
+            }
+            #submit{
+
+            }
+
+
+        </style>
+
+    </head>
+    <body>
+        <center>
+            <h3><span>Please enter your name and city:</span></h3>
+                <input type="text" placeholder="Enter your name here:" name="name" id="nam">
+                <input type="text" placeholder="Enter your city here:" name="city" id="cty">
+                <br>
+                <input type="button" name="button" value="save" id="submit" onclick="Addrow()">
+            <table border ="4" id='same'>
+                <thread>
+                    <tr>
+                        <th>Name of the candidate:</th>
+                        <th>City of the candidate:</th>
+                    </tr>
+                </thread>
+            </table>
+        </center>
+        <script>
+            
+            var list1=[];
+            var list2=[];
+
+            // var entry= document.getElementById("submit");
+            // entry.addEventListener("click", displayDetails);
+            var n = 1;
+            var x = 0;
+
+            function Addrow()
+            {
+
+                var display = document.getElementById('same');
+                var newrow = display.insertRow(n);
+
+
+                list1[x] = document.getElementById("nam").value;
+                list2[x] = document.getElementById("cty").value;
+
+                var cell1 = newrow.insertCell(0);
+                var cell2 = newrow.insertCell(1);
+
+                cell1.innerHTML = list1[x];
+                cell2.innerHTML = list2[x];
+
+                n++;
+                x++;
+             }
+        </script>
+    </body>
+</html>
